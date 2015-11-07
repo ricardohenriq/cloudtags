@@ -82,3 +82,14 @@ body {
 .icon-bar{
 	background-color:#18bc9c !important
 }
+
+#tag-cloud a:visited{
+	font-weight:bold !important;
+	color:#fff !important;
+}
+
+#tag-cloud a:hover{
+	font-weight:bold !important;
+	color:#CE6F2D !important;
+	text-decoration:none
+}
