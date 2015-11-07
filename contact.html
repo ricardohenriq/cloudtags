@@ -24,8 +24,7 @@
 		<link rel="stylesheet" href="assets/css/main.css">
 		<script defer src="library/jquery-1.11.1/jquery-1.11.1.min.js"></script>
 		<script defer src="library/Bootstrap/js/bootstrap.min.js"></script>
-		<script defer src="library/jquery.tagcloud.js/jquery.tagcloud.js"></script>
-		<script defer src="assets/js/index.js"></script>
+		<script defer src="assets/js/contact.js"></script>
 	</head>
 	<body>
 		<nav class="navbar navbar-default navbar-fixed-top">
@@ -37,7 +36,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand active" href="#">Tag Cloud
+					<a class="navbar-brand" href="index.html">Tag Cloud
 						<img src="assets/images/Cloud32x32.png">
 					</a>
 				</div>
@@ -50,11 +49,11 @@
 							<a href="send-link.html">Send your Link</a>
 						</li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT THE SITE <span class="caret"></span></a>
+							<a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT THE SITE <span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="#">DONATE</a></li>
 								<li><a href="banners.html">Banners</a></li>
-								<li><a href="contact.html">Contact</a></li>
+								<li class="active"><a href="contact.html">Contact</a></li>
 								<li><a href="terms-of-use.html">Terms of Use</a></li>
 								<li><a href="privacy-policy.html">Privacy Policy</a></li>
 							</ul>
@@ -66,8 +65,53 @@
 		<div class="wrapper">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-10 col-md-offset-1 span7 text-center" id="tag-cloud">
-
+					<div class="col-md-8 section">
+						<h2 class="text-center">Formulário de Contato</h2>
+						<form id="contact_form" class="form-horizontal" role="form" method="POST">
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="nome">Nome:</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" name="nome" id="nome" placeholder="Name">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="email">Email:</label>
+								<div class="col-sm-10">          
+									<input type="email" class="form-control" name="email" id="email" placeholder="Email">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="assunto">Assunto:</label>
+								<div class="col-sm-10">          
+									<input type="text" class="form-control" name="assunto" id="assunto" placeholder="Assunto">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="desc">Descrição:</label>
+								<div class="col-sm-10">          
+									<textarea rows="4" name="desc" id="desc" maxlength="1000"></textarea>
+								</div>
+							</div>
+							<div class="form-group">        
+								<div class="col-sm-offset-2 col-sm-10">
+									<button class="btn btn-info pull-right" id="contact-form-email">Enviar</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="col-md-4">
+						<div class="section padding-inner">
+							<h2 class="h-custom">Contact</h2>
+							<h4>Use your own Email</h4>
+							<div class="block">
+								<i class="glyphicon glyphicon-envelope"></i>
+								Email: <a href="mailto:albernazassis@gmail">albernazassis@gmail</a>
+							</div>
+							<div class="block">
+								<i class="glyphicon glyphicon-pencil"></i>
+								Subject: [Your Subject] <span class="title">|Cloudtags Site|</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
