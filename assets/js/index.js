@@ -1,15 +1,16 @@
 $.fn.tagcloud.defaults = {
-      size: {start: 14, end: 35, unit: 'px'},
-      color: {start: '#2c3e50', end: '#2c3e50'}
-    };
+	size:{start:14, end:35, unit:'px'},
+    color:{start:'#2C3E50', end:'#2C3E50'}
+};
 
 $(document).ready(function(){
 	getTagCloudsQuantity();
 });
 
-function getFilesAjax(success, url, dataType){
+function getFilesAjax(success, url, dataType, beforeSend){
     $.ajax({
         url: url,
+		beforeSend: beforeSend,
         success: success,
         error: function (XMLHttpRequest, textStatus, errorThrown){
             console.log(XMLHttpRequest);
@@ -22,21 +23,29 @@ function getFilesAjax(success, url, dataType){
 }
 
 function getTagCloudsQuantity(){
+	var beforeSend = function(){
+		$("#tag-cloud").html('<img src="assets/images/big-loader.gif">');
+	}
 	var success = function(response){
+		$("#tag-cloud").empty();
 		getTagCloud(parseInt(response));
 	}
 	var dataType = 'text';
 	var url = 'assets/json/sites-quantity.txt';
-	getFilesAjax(success, url, dataType);
+	getFilesAjax(success, url, dataType, beforeSend);
 }
 
 function getTagCloud(maxValue){
+	var beforeSend = function(){
+		$("#tag-cloud").html('<img src="assets/images/big-loader.gif">');
+	}
 	var success = function(response){
+		$("#tag-cloud").empty();
 		printTags(response);
 	}
 	var url = 'assets/json/' + randomIntFromInterval(1, maxValue) + '.json';
 	var dataType = 'json';
-	getFilesAjax(success, url, dataType);
+	getFilesAjax(success, url, dataType, beforeSend);
 }
 
 function printTags(sites){
